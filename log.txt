@@ -1,0 +1,131 @@
+2024-03-15T14:23:01Z 192.168.1.42 GET /api/users 200 142ms
+2024-03-15T14:23:02Z 10.0.0.7 POST /api/login 401 89ms
+2024-03-15T14:23:03Z 192.168.1.55 GET /api/products 200 61ms
+2024-03-15T14:23:04Z 192.168.1.42 GET /api/users/12 200 53ms
+2024-03-15T14:23:05Z 10.0.0.9 DELETE /api/users/5 500 300ms
+2024-03-15T14:23:06Z 10.0.0.7 GET /api/products 200 0.231s
+2024-03-15T14:23:07Z 192.168.1.42 POST /api/orders 201 120
+2024/03/15 14:23:08 10.0.0.7 GET /api/users 200 99ms
+15-Mar-2024 14:23:09 192.168.1.55 GET /api/orders 404 45ms
+1710512581 10.0.0.9 POST /api/login 200 78ms
+2024-03-15T14:23:10Z 192.168.1.42 GET /api/users 500 512ms "Mozilla/5.0"
+2024-03-15T14:23:11Z 10.0.0.7 GET /api/products 200 88ms "https://referrer.com"
+2024-03-15T14:23:12Z - GET /api/users 200 142ms
+2024-03-15T14:23:13Z 192.168.1.42 GET /api/users -
+{"timestamp":"2024-03-15T14:23:14Z","ip":"10.0.0.8","method":"POST","path":"/api/login","status":200,"responseTime":"60ms"}
+{"timestamp":"2024-03-15T14:23:15Z","ip":"10.0.0.9","method":"GET","path":"/api/dashboard","status":500,"responseTime":"900ms"}
+2024-03-15T14:23:16Z 10.0.0.7 GET /api/
+this is a malformed line that makes no sense at all
+2024-03-15T14:23:18Z 192.168.1.42 GET /api/users/99 404 33ms
+
+2024-03-15T14:23:19Z 10.0.0.7 POST /api/orders 500 870ms
+java.lang.NullPointerException
+    at com.app.api.OrderService.create(OrderService.java:42)
+    at com.app.api.OrderController.post(OrderController.java:18)
+2024-03-15T14:23:22Z 192.168.1.55 GET /api/products 200 61ms
+2024-03-15T14:23:23Z 10.0.0.9 GET /api/users 200 77ms
+2024-03-15T14:23:24Z 192.168.1.42 DELETE /api/orders/7 403 55ms
+2024-03-15T14:23:25Z 10.0.0.7 GET /api/users/5 500 1020ms
+2024-03-15T14:23:26Z 192.168.1.55 POST /api/login 401 44ms
+2024-03-15T14:23:27Z 10.0.0.9 GET /api/products 200 0.089s
+2024-03-15T14:23:28Z 192.168.1.42 GET /api/orders 200 134ms
+2024-03-15T14:23:29Z 10.0.0.7 POST /api/users 422 201ms
+2024-03-15T14:23:30Z 192.168.1.55 GET /api/users/3 200 47ms
+  2024-03-15T14:23:31Z 192.168.1.42 GET /api/users 200 88ms
+2024-03-15T14:23:32Z 10.0.0.9 PUT /api/users/5 200 0.310s
+2024-03-15T14:23:33Z 192.168.1.55 GET /api/orders 500 445ms
+2024-03-15T14:23:34Z - POST /api/login 401 67ms
+{"timestamp":"2024-03-15T14:23:35Z","ip":"192.168.1.42","method":"GET","path":"/api/users","status":200,"responseTime":"55ms"}
+2024-03-15T14:23:36Z 10.0.0.7 GET /api/products/8 404 29ms
+partial line without
+2024-03-15T14:23:38Z 10.0.0.9 GET /api/users 200 91ms
+2024-03-15T14:23:39Z 192.168.1.42 POST /api/orders 500 760ms
+2024-03-15T14:23:40Z 10.0.0.7 GET /api/users/2 200 38ms
+1710512601 192.168.1.55 DELETE /api/orders/3 204 112ms
+2024/03/15 14:23:42 10.0.0.9 GET /api/products 200 73ms
+15-Mar-2024 14:23:43 192.168.1.42 POST /api/login 200 95ms
+2024-03-15T14:23:44Z 10.0.0.7 GET /api/users 500 988ms
+2024-03-15T14:23:45Z 192.168.1.55 GET /api/orders/5 200 42ms
+2024-03-15T14:23:01Z 192.168.1.42 GET /api/users 200 142ms
+2024-03-15T14:23:02Z 10.0.0.7 POST /api/login 401 89ms
+2024-03-15T14:23:03Z 192.168.1.55 GET /api/products 200 61ms
+2024-03-15T14:23:04Z 192.168.1.42 GET /api/users/12 200 53ms
+2024-03-15T14:23:05Z 10.0.0.9 DELETE /api/users/5 500 300ms
+2024-03-15T14:23:06Z 10.0.0.7 GET /api/products 200 0.231s
+2024-03-15T14:23:07Z 192.168.1.42 POST /api/orders 201 120
+2024/03/15 14:23:08 10.0.0.7 GET /api/users 200 99ms
+15-Mar-2024 14:23:09 192.168.1.55 GET /api/orders 404 45ms
+1710512581 10.0.0.9 POST /api/login 200 78ms
+2024-03-15T14:23:10Z 192.168.1.42 GET /api/users 500 512ms "Mozilla/5.0"
+2024-03-15T14:23:11Z 10.0.0.7 GET /api/products 200 88ms "https://referrer.com"
+2024-03-15T14:23:12Z - GET /api/users 200 142ms
+2024-03-15T14:23:13Z 192.168.1.42 GET /api/users -
+{"timestamp":"2024-03-15T14:23:14Z","ip":"10.0.0.8","method":"POST","path":"/api/login","status":200,"responseTime":"60ms"}
+{"timestamp":"2024-03-15T14:23:15Z","ip":"10.0.0.9","method":"GET","path":"/api/dashboard","status":500,"responseTime":"900ms"}
+2024-03-15T14:23:16Z 10.0.0.7 GET /api/
+this is a malformed line that makes no sense at all
+2024-03-15T14:23:18Z 192.168.1.42 GET /api/users/99 404 33ms
+
+2024-03-15T14:23:19Z 10.0.0.7 POST /api/orders 500 870ms
+java.lang.NullPointerException
+    at com.app.api.OrderService.create(OrderService.java:42)
+    at com.app.api.OrderController.post(OrderController.java:18)
+2024-03-15T14:23:22Z 192.168.1.55 GET /api/products 200 61ms
+2024-03-15T14:23:23Z 10.0.0.9 GET /api/users 200 77ms
+2024-03-15T14:23:24Z 192.168.1.42 DELETE /api/orders/7 403 55ms
+2024-03-15T14:23:25Z 10.0.0.7 GET /api/users/5 500 1020ms
+2024-03-15T14:23:26Z 192.168.1.55 POST /api/login 401 44ms
+2024-03-15T14:23:27Z 10.0.0.9 GET /api/products 200 0.089s
+2024-03-15T14:23:28Z 192.168.1.42 GET /api/orders 200 134ms
+2024-03-15T14:23:29Z 10.0.0.7 POST /api/users 422 201ms
+2024-03-15T14:23:30Z 192.168.1.55 GET /api/users/3 200 47ms
+  2024-03-15T14:23:31Z 192.168.1.42 GET /api/users 200 88ms
+2024-03-15T14:23:32Z 10.0.0.9 PUT /api/users/5 200 0.310s
+2024-03-15T14:23:33Z 192.168.1.55 GET /api/orders 500 445ms
+2024-03-15T14:23:34Z - POST /api/login 401 67ms
+{"timestamp":"2024-03-15T14:23:35Z","ip":"192.168.1.42","method":"GET","path":"/api/users","status":200,"responseTime":"55ms"}
+2024-03-15T14:23:36Z 10.0.0.7 GET /api/products/8 404 29ms
+partial line without
+2024-03-15T14:23:38Z 10.0.0.9 GET /api/users 200 91ms
+2024-03-15T14:23:39Z 192.168.1.42 POST /api/orders 500 760ms
+2024-03-15T14:23:40Z 10.0.0.7 GET /api/users/2 200 38ms
+1710512601 192.168.1.55 DELETE /api/orders/3 204 112ms
+2024/03/15 14:23:42 10.0.0.9 GET /api/products 200 73ms
+15-Mar-2024 14:23:43 192.168.1.42 POST /api/login 200 95ms
+2024-03-15T14:23:44Z 10.0.0.7 GET /api/users 500 988ms
+2024-03-15T14:23:45Z 192.168.1.55 GET /api/orders/5 200 42ms
+2024-03-15T14:23:01Z 192.168.1.42 GET /api/users 200 142ms
+2024-03-15T14:23:02Z 10.0.0.7 POST /api/login 401 89ms
+2024-03-15T14:23:03Z 192.168.1.55 GET /api/products 200 61ms
+2024-03-15T14:23:04Z 192.168.1.42 GET /api/users/12 200 53ms
+2024-03-15T14:23:05Z 10.0.0.9 DELETE /api/users/5 500 300ms
+2024-03-15T14:23:06Z 10.0.0.7 GET /api/products 200 0.231s
+2024-03-15T14:23:07Z 192.168.1.42 POST /api/orders 201 120
+2024/03/15 14:23:08 10.0.0.7 GET /api/users 200 99ms
+15-Mar-2024 14:23:09 192.168.1.55 GET /api/orders 404 45ms
+1710512581 10.0.0.9 POST /api/login 200 78ms
+2024-03-15T14:23:10Z 192.168.1.42 GET /api/users 500 512ms "Mozilla/5.0"
+2024-03-15T14:23:11Z 10.0.0.7 GET /api/products 200 88ms "https://referrer.com"
+2024-03-15T14:23:12Z - GET /api/users 200 142ms
+2024-03-15T14:23:13Z 192.168.1.42 GET /api/users -
+{"timestamp":"2024-03-15T14:23:14Z","ip":"10.0.0.8","method":"POST","path":"/api/login","status":200,"responseTime":"60ms"}
+{"timestamp":"2024-03-15T14:23:15Z","ip":"10.0.0.9","method":"GET","path":"/api/dashboard","status":500,"responseTime":"900ms"}
+2024-03-15T14:23:16Z 10.0.0.7 GET /api/
+this is a malformed line that makes no sense at all
+2024-03-15T14:23:18Z 192.168.1.42 GET /api/users/99 404 33ms
+
+2024-03-15T14:23:19Z 10.0.0.7 POST /api/orders 500 870ms
+java.lang.NullPointerException
+    at com.app.api.OrderService.create(OrderService.java:42)
+    at com.app.api.OrderController.post(OrderController.java:18)
+2024-03-15T14:23:22Z 192.168.1.55 GET /api/products 200 61ms
+2024-03-15T14:23:23Z 10.0.0.9 GET /api/users 200 77ms
+2024-03-15T14:23:24Z 192.168.1.42 DELETE /api/orders/7 403 55ms
+2024-03-15T14:23:25Z 10.0.0.7 GET /api/users/5 500 1020ms
+2024-03-15T14:23:26Z 192.168.1.55 POST /api/login 401 44ms
+2024-03-15T14:23:27Z 10.0.0.9 GET /api/products 200 0.089s
+2024-03-15T14:23:28Z 192.168.1.42 GET /api/orders 200 134ms
+2024-03-15T14:23:29Z 10.0.0.7 POST /api/users 422 201ms
+2024-03-15T14:23:30Z 192.168.1.55 GET /api/users/3 200 47ms
+  2024-03-15T14:23:31Z 192.168.1.42 GET /api/users 200 88ms
+2024-03-15T14:23:32Z 10.0.0.9 PUT /api/users/5 200 0.310s
