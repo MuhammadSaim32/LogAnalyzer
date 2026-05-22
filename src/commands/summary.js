@@ -4,42 +4,36 @@ import showBanner from "../utils/Banner.js";
 
 function printStyledSummary(stats) {
     showBanner()
-    console.log("\n\n")
-    console.log('\n' + chalk.cyan.bold('=================================================='));
-    console.log(chalk.cyan.bold('       Summary Of Logs          '));
-    console.log(chalk.cyan.bold('==================================================\n'));
+
+    console.log(chalk.cyan.bold(`\n  --- Summary Of Logs ---`));
 
     // --- SECTION 1: INGESTION METRICS ---
-    console.log(chalk.yellow.bold('[+] LOG STREAM INTEGRITY'));
-    console.log(chalk.gray('--------------------------------------------------'));
-    console.log(`${chalk.white('Total Processed Lines :')} ${chalk.green(stats.TotalRequests + stats.MalformedLinesCount)}`);
-    console.log(`${chalk.white('Valid Log Requests    :')} ${chalk.green(stats.TotalRequests)}`);
-    console.log(`${chalk.white('Malformed/Bad Lines   :')} ${stats.MalformedLinesCount > 0 ? chalk.red.bold(stats.MalformedLinesCount) : chalk.green(0)}`);
-    console.log(`${chalk.white('Unique Client IPs     :')} ${chalk.blue.bold(stats.TotalNumberOfUniqeIPs)}`);
+    console.log(chalk.cyan.bold(`\n  --- Log Stream Integrity ---`));
+    console.log(`    ${chalk.yellow.bold('Total Processed Lines')}: ${chalk.green(stats.TotalRequests + stats.MalformedLinesCount)}`);
+    console.log(`    ${chalk.yellow.bold('Valid Log Requests')}: ${chalk.green(stats.TotalRequests)}`);
+    console.log(`    ${chalk.yellow.bold('Malformed/Bad Lines')}: ${stats.MalformedLinesCount > 0 ? chalk.red.bold(stats.MalformedLinesCount) : chalk.green(0)}`);
+    console.log(`    ${chalk.yellow.bold('Unique Client IPs')}: ${chalk.blue.bold(stats.TotalNumberOfUniqeIPs)}`);
 
     // --- SECTION 2: STATUS CODE BUCKETS ---
-    console.log('\n' + chalk.yellow.bold('[+] RESPONSE STATUS DISTRIBUTION'));
-    console.log(chalk.gray('--------------------------------------------------'));
+    console.log(chalk.cyan.bold(`\n  --- Response Status Distribution ---`));
 
-    // Dynamically pull from your ResponseStatus object
     const status = stats.ResponseStatus;
-    console.log(`${chalk.blue('1xx Informational :')} ${chalk.white(status['1xx'] || 0)}`);
-    console.log(`${chalk.green('2xx Success       :')} ${chalk.white(status['2xx'] || 0)}`);
-    console.log(`${chalk.magenta('3xx Redirection   :')} ${chalk.white(status['3xx'] || 0)}`);
-    console.log(`${chalk.yellow('4xx Client Error  :')} ${status['4xx'] > 0 ? chalk.yellow.bold(status['4xx']) : chalk.white(0)}`);
-    console.log(`${chalk.red('5xx Server Error  :')} ${status['5xx'] > 0 ? chalk.red.bold(status['5xx']) : chalk.white(0)}`);
+    console.log(`    ${chalk.yellow.bold('1xx Informational')}: ${chalk.white(status['1xx'] || 0)}`);
+    console.log(`    ${chalk.yellow.bold('2xx Success')}: ${chalk.white(status['2xx'] || 0)}`);
+    console.log(`    ${chalk.yellow.bold('3xx Redirection')}: ${chalk.white(status['3xx'] || 0)}`);
+    console.log(`    ${chalk.yellow.bold('4xx Client Error')}: ${status['4xx'] > 0 ? chalk.yellow.bold(status['4xx']) : chalk.white(0)}`);
+    console.log(`    ${chalk.yellow.bold('5xx Server Error')}: ${status['5xx'] > 0 ? chalk.red.bold(status['5xx']) : chalk.white(0)}`);
 
     // --- SECTION 3: MALFORMED LINES ---
     if (stats.ActualMalformLines && stats.ActualMalformLines.length > 0) {
-        console.log('\n' + chalk.red.bold('[!] MALFORMED LINE'));
-        console.log(chalk.gray('--------------------------------------------------'));
+        console.log(chalk.red.bold(`\n  --- Malformed Lines ---`));
 
         stats.ActualMalformLines.forEach((line, index) => {
-            console.log(chalk.red(`  ${index + 1}. `) + chalk.gray(`"${line}"`));
+            console.log(`    ${chalk.yellow.bold(`Line ${index + 1}`)}: ${chalk.gray(`"${line}"`)}`);
         });
     }
 
-    console.log('\n' + chalk.cyan.bold('==================================================\n'));
+    console.log("");
 }
 
 

@@ -18,8 +18,10 @@ export default function ReturnData(filePath) {
         .split('\n')
         .map((val) => val.trim())
         .filter((val) => val !== '')
-    const ActualMalformLines=[]
+    const ActualMalformLines = []
     let MalformedLinesCount = 0;
+    let LineThatCrashed = []
+    let prevLIne = null;
     for (let val of data) {
         const ip = val.match(IP_REGEX)
         const metod = val.match(METHOD_REGEX)
@@ -76,7 +78,23 @@ export default function ReturnData(filePath) {
         if (Object.keys(ans).length > 0) {
 
             values.push(ans)
+            prevLIne = ans
         } else {
+            const isStackTraceLine = val.startsWith('at ') || val.includes('.java:') || val.includes('.py", line');
+            const containsErrorKeyword = val.toLowerCase().includes('error:') || val.toLowerCase().includes('exception:');
+            const isRawExceptionName = val.endsWith('Exception') || val.includes('Error: ') || val.includes('panic:');
+            if (isStackTraceLine || containsErrorKeyword || isRawExceptionName) {
+                if (prevLIne != null) {
+                    let obj = { ...prevLIne }
+                    obj.line = val
+                    LineThatCrashed.push(obj)
+                    prevLIne = null
+                } else {
+                    LineThatCrashed[LineThatCrashed.length - 1].line += val
+                }
+
+            }
+
             MalformedLinesCount++;
             ActualMalformLines.push(val)
         }
@@ -85,6 +103,7 @@ export default function ReturnData(filePath) {
 
     status.MalformedLinesCount = MalformedLinesCount
     status.TotalRequests = values.length
-    status.ActualMalformLines=ActualMalformLines
-    return [headers, values, status]
+    status.ActualMalformLines = ActualMalformLines
+    status.LineThatCrashed = LineThatCrashed
+    return [headers, values, status, LineThatCrashed]
 }

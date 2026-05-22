@@ -2,6 +2,7 @@ import { program } from 'commander';
 import Show from './commands/show.js';
 import Filter from "./commands/filter.js"
 import Summary from './commands/summary.js';
+import Crash from './commands/crash.js';
 program
     .name('LogAnalyzer')
     .description('CLI Tool for Logs parsing')
@@ -33,16 +34,25 @@ program.command('filter')
         if (Object.keys(options).length === 0) {
             console.error("❌ Error: You must specify at least one filter option (e.g., --IP, --METHOD, --STATUS).");
             console.log("Example: node index.js filter logs.log --METHOD GET");
-            process.exit(1); // Stop execution right here
+            process.exit(1); 
         }
         Filter(file, options)
     });
 
 
-program.command('Summary')
+program.command('summary')
     .description('Summary of All Logs')
     .argument('<file>', 'Log File Absolute Path')
     .action((file, options) => {
         Summary(file, options)
     });
+
+program.command('crash')
+    .description('This Command Will Show Which Specific Request Cause Crash/Errors')
+    .argument('<file>', 'Log File Absolute Path')
+    .action((file, options) => {
+        Crash(file, options)
+    });
+
+
 program.parse()
