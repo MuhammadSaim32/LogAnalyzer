@@ -1,0 +1,16 @@
+{
+  "name": "loganayzer",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cli-table3": "^0.6.5",
+    "commander": "^14.0.3"
+  }
+}
