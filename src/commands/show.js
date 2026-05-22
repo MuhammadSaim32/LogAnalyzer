@@ -1,13 +1,13 @@
 import ReturnData from "../utils/ReturnData.js"
 import Table from 'cli-table3'
-
+import showBanner from "../utils/Banner.js"
 const w = process.stdout.columns || 80
 
 
 
 
 export default function Show(filePath, options) {
-    let [headers, Values] = ReturnData(filePath)
+    let [headers, Values,status] = ReturnData(filePath)
     let col = []
 
     if (options.hide) {
@@ -41,6 +41,7 @@ export default function Show(filePath, options) {
         table.push(row)
 
     }
+    showBanner()
     console.log(table.toString())
 
 }

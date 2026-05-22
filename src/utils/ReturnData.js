@@ -11,14 +11,15 @@ const REFERER_REGEX = /"(https?:\/\/[^"]+)"/
 
 export default function ReturnData(filePath) {
 
-
+    const status = {}
     const headers = []
     const values = []
     const data = fs.readFileSync(filePath, "utf-8")
         .split('\n')
         .map((val) => val.trim())
         .filter((val) => val !== '')
-
+    const ActualMalformLines=[]
+    let MalformedLinesCount = 0;
     for (let val of data) {
         const ip = val.match(IP_REGEX)
         const metod = val.match(METHOD_REGEX)
@@ -36,11 +37,11 @@ export default function ReturnData(filePath) {
         if (metod && !headers.includes("METHOD")) {
             headers.push("METHOD")
         }
-        
+
         if (time && !headers.includes("TIME")) {
             headers.push("TIME")
         }
-        
+
         if (endpint && !headers.includes("ENDPOINT")) {
             headers.push("ENDPOINT")
         }
@@ -71,9 +72,19 @@ export default function ReturnData(filePath) {
             ...(userAgent && { "USER_AGENT": userAgent[0] }),
             ...(referer && { "REFERER": referer[0] }),
         }
-        values.push(ans)
+
+        if (Object.keys(ans).length > 0) {
+
+            values.push(ans)
+        } else {
+            MalformedLinesCount++;
+            ActualMalformLines.push(val)
+        }
     }
 
 
-    return [headers, values]
+    status.MalformedLinesCount = MalformedLinesCount
+    status.TotalRequests = values.length
+    status.ActualMalformLines=ActualMalformLines
+    return [headers, values, status]
 }

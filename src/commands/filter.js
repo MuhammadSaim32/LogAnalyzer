@@ -1,5 +1,6 @@
 import ReturnData from "../utils/ReturnData.js"
 import Table from 'cli-table3'
+import showBanner from "../utils/Banner.js";
 
 const w = process.stdout.columns || 80
 
@@ -53,6 +54,7 @@ export default function Filter(filePath, options) {
             table.push(row)
 
         }
+        showBanner()
         console.log(table.toString())
         return
     }
@@ -84,6 +86,7 @@ export default function Filter(filePath, options) {
             table.push(row)
 
         }
+        showBanner()
         console.log(table.toString())
 
     }

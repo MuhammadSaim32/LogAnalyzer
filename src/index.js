@@ -1,6 +1,7 @@
 import { program } from 'commander';
 import Show from './commands/show.js';
 import Filter from "./commands/filter.js"
+import Summary from './commands/summary.js';
 program
     .name('LogAnalyzer')
     .description('CLI Tool for Logs parsing')
@@ -29,6 +30,19 @@ program.command('filter')
     .option('-l ,--line <line>', 'Filter by Line Number')
 
     .action((file, options) => {
+        if (Object.keys(options).length === 0) {
+            console.error("❌ Error: You must specify at least one filter option (e.g., --IP, --METHOD, --STATUS).");
+            console.log("Example: node index.js filter logs.log --METHOD GET");
+            process.exit(1); // Stop execution right here
+        }
         Filter(file, options)
+    });
+
+
+program.command('Summary')
+    .description('Summary of All Logs')
+    .argument('<file>', 'Log File Absolute Path')
+    .action((file, options) => {
+        Summary(file, options)
     });
 program.parse()
