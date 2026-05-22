@@ -1,17 +1,14 @@
 import ReturnData from "../utils/ReturnData.js";
 import chalk from "chalk";
-import showBanner from "../utils/Banner.js";
 
 export default function Crash(filePath) {
     const [headers, , , LineThatCrashed] = ReturnData(filePath);
 
     if (!LineThatCrashed || LineThatCrashed.length === 0) {
-        showBanner();
         console.log(chalk.green('\n  ✔ No runtime crashes or exceptions identified in this file.\n'));
         return;
     }
 
-    showBanner();
     console.log(chalk.red.bold(`\n  --- Critical Fault Report: Server Crash Root-Causes ---`));
 
     let count = 1;

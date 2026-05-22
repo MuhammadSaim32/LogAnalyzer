@@ -3,6 +3,10 @@ import Show from './commands/show.js';
 import Filter from "./commands/filter.js"
 import Summary from './commands/summary.js';
 import Crash from './commands/crash.js';
+import showBanner from './utils/Banner.js';
+
+showBanner();
+
 program
     .name('LogAnalyzer')
     .description('CLI Tool for Logs parsing')
@@ -10,7 +14,7 @@ program
 
 
 program.command('show')
-    .description('Show command  will Show Logs In a Clean Tabel Formate')
+    .description('Show command  will Show Logs In a Clean  Formate')
     .argument('<file>', 'Log File Absolute Path')
     .option("--hide <hide...>", "Hide columns that your not interested in")
     .action((files, options) => {
@@ -48,7 +52,7 @@ program.command('summary')
     });
 
 program.command('crash')
-    .description('This Command Will Show Which Specific Request Cause Crash/Errors')
+    .description('crash Command Will Show Which Specific Request Cause Crash/Errors')
     .argument('<file>', 'Log File Absolute Path')
     .action((file, options) => {
         Crash(file, options)

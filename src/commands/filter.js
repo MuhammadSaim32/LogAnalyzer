@@ -1,6 +1,5 @@
 import ReturnData from "../utils/ReturnData.js"
 import chalk from 'chalk'
-import showBanner from "../utils/Banner.js";
 
 const arr = [
     "IP",
@@ -21,7 +20,6 @@ export default function Filter(filePath, options) {
         let FilterLIne = Values[options.line - 1]
         let s = [FilterLIne]
 
-        showBanner()
         for (let val of s) {
             console.log(chalk.cyan.bold(`\n  --- Log Entry #${options.line} ---`));
             for (let h of headers) {
@@ -46,7 +44,6 @@ export default function Filter(filePath, options) {
     }
 
     if (value.length > 0) {
-        showBanner()
         for (let val of value) {
             console.log(chalk.cyan.bold(`\n  --- Log Entry #${count++} ---`));
             for (let h of headers) {

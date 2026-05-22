@@ -17,5 +17,6 @@ export default function showBanner() {
     console.log(chalk.cyan(asciiText));
     console.log(chalk.gray('=============================================='));
     console.log(chalk.yellow('  Log Analyzer & Filter Tool v1.0.0'));
+    console.log(chalk.green('  GitHub: github.com/MuhammadSaim32'));
     console.log(chalk.gray('==============================================\n'));
 }

@@ -1,6 +1,5 @@
 import ReturnData from "../utils/ReturnData.js"
 import chalk from 'chalk'
-import showBanner from "../utils/Banner.js"
 
 export default function Show(filePath, options) {
     let [headers, Values, status] = ReturnData(filePath)
@@ -10,7 +9,6 @@ export default function Show(filePath, options) {
         headers = headers.filter((h) => !options.hide.includes(h))
     }
 
-    showBanner()
 
     let count = 1;
     for (let val of Values) {

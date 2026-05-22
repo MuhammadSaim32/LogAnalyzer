@@ -1,9 +1,7 @@
 import ReturnData from "../utils/ReturnData.js";
 import chalk from 'chalk';
-import showBanner from "../utils/Banner.js";
 
 function printStyledSummary(stats) {
-    showBanner()
 
     console.log(chalk.cyan.bold(`\n  --- Summary Of Logs ---`));
 
